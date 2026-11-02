@@ -1,0 +1,880 @@
+{
+  "request_id": "online-E07-duplicate-r02",
+  "run_id": "49da8569-c9f9-423f-803f-f6bc3e6152c2",
+  "status": "completed",
+  "reason_code": "MODEL_FINISH",
+  "reason": "脚本已生成并保存成功（plan_id plan_181fb83df3b93ea5），生成后估算可行：费用 12/20，无预算缺口，预计 17:12 完成，早于 18:00 截止，无时间缺口。",
+  "replayed": true,
+  "model_mode": "online",
+  "model_name": "deepseek-v4.1-flash-1017",
+  "catalog_version": "2026-10-29-v1",
+  "request": {
+    "budget": 20,
+    "deadline": "2026-10-29T18:00:00+08:00",
+    "request_id": "online-E07-duplicate-r02",
+    "theme": "字幕产品活动"
+  },
+  "plan": {
+    "material_ids": [
+      "M01",
+      "M02"
+    ],
+    "objective": "字幕产品活动",
+    "steps": [
+      {
+        "depends_on": [],
+        "id": "search",
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      {
+        "depends_on": [
+          "search"
+        ],
+        "id": "estimate_before",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_before"
+        ],
+        "id": "script",
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      {
+        "depends_on": [
+          "script"
+        ],
+        "id": "estimate_after",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_after"
+        ],
+        "id": "save",
+        "status": "succeeded",
+        "tool": "save_plan"
+      }
+    ],
+    "variant": "premium",
+    "version": 1
+  },
+  "plan_history": [
+    {
+      "material_ids": [
+        "M01",
+        "M02"
+      ],
+      "objective": "字幕产品活动",
+      "steps": [
+        {
+          "depends_on": [],
+          "id": "search",
+          "status": "succeeded",
+          "tool": "search_materials"
+        },
+        {
+          "depends_on": [
+            "search"
+          ],
+          "id": "estimate_before",
+          "status": "succeeded",
+          "tool": "estimate_plan"
+        },
+        {
+          "depends_on": [
+            "estimate_before"
+          ],
+          "id": "script",
+          "status": "succeeded",
+          "tool": "generate_script"
+        },
+        {
+          "depends_on": [
+            "script"
+          ],
+          "id": "estimate_after",
+          "status": "succeeded",
+          "tool": "estimate_plan"
+        },
+        {
+          "depends_on": [
+            "estimate_after"
+          ],
+          "id": "save",
+          "status": "succeeded",
+          "tool": "save_plan"
+        }
+      ],
+      "variant": "premium",
+      "version": 1
+    }
+  ],
+  "steps": [
+    {
+      "elapsed_after": 1,
+      "id": 1,
+      "plan_version": null,
+      "result": {
+        "charged": 0,
+        "data": {
+          "catalog_version": "2026-10-29-v1",
+          "materials": [
+            {
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ],
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ]
+            },
+            {
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ],
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ]
+            }
+          ],
+          "tool_rules": {
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "variants": {
+            "basic": {
+              "deliverable": "核心脚本与行动提示",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "label": "精简内容方案"
+            },
+            "premium": {
+              "deliverable": "完整脚本与互动环节",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "label": "完整内容方案"
+            }
+          }
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      "spent_after": 0,
+      "status": "succeeded",
+      "tool": "search_materials"
+    },
+    {
+      "elapsed_after": 2,
+      "id": 2,
+      "plan_version": 1,
+      "result": {
+        "charged": 0,
+        "data": {
+          "budget": 20,
+          "budget_gap": 0,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "feasible": true,
+          "plan_version": 1,
+          "remaining_fee": 12,
+          "remaining_minutes": 10,
+          "script_exists": false,
+          "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+          "spent": 0,
+          "time_gap_minutes": 0,
+          "total_fee": 12
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      "spent_after": 0,
+      "status": "succeeded",
+      "tool": "estimate_plan"
+    },
+    {
+      "elapsed_after": 10,
+      "id": 3,
+      "plan_version": 1,
+      "result": {
+        "charged": 12,
+        "data": {
+          "charged": 12,
+          "script": {
+            "deliverable": "完整脚本与互动环节",
+            "generation_mode": "local_mock",
+            "sections": [
+              {
+                "text": "本次活动围绕字幕产品活动展开。",
+                "title": "主题"
+              },
+              {
+                "text": "产品支持字幕编辑；用户可以修改导出的脚本文本；活动提供一次公开课程；报名表可以收集参加者的时间偏好",
+                "title": "素材事实"
+              },
+              {
+                "text": "参与者可以了解素材信息，并选择后续关注内容。",
+                "title": "行动提示"
+              }
+            ],
+            "source_ids": [
+              "M01",
+              "M02"
+            ],
+            "theme": "字幕产品活动",
+            "variant": "premium"
+          },
+          "total_spent": 12
+        },
+        "elapsed_minutes": 8,
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      "spent_after": 12,
+      "status": "succeeded",
+      "tool": "generate_script"
+    },
+    {
+      "elapsed_after": 11,
+      "id": 4,
+      "plan_version": 1,
+      "result": {
+        "charged": 0,
+        "data": {
+          "budget": 20,
+          "budget_gap": 0,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "feasible": true,
+          "plan_version": 1,
+          "remaining_fee": 0,
+          "remaining_minutes": 1,
+          "script_exists": true,
+          "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+          "spent": 12,
+          "time_gap_minutes": 0,
+          "total_fee": 12
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      "spent_after": 12,
+      "status": "succeeded",
+      "tool": "estimate_plan"
+    },
+    {
+      "elapsed_after": 12,
+      "id": 5,
+      "plan_version": 1,
+      "result": {
+        "charged": 0,
+        "data": {
+          "plan_id": "plan_181fb83df3b93ea5",
+          "request_id": "online-E07-duplicate-r02",
+          "storage": "sqlite:plans"
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "save_plan"
+      },
+      "spent_after": 12,
+      "status": "succeeded",
+      "tool": "save_plan"
+    }
+  ],
+  "materials": {
+    "M01": {
+      "facts": [
+        "产品支持字幕编辑",
+        "用户可以修改导出的脚本文本"
+      ],
+      "id": "M01",
+      "tags": [
+        "字幕",
+        "产品",
+        "内容",
+        "活动",
+        "办公"
+      ]
+    },
+    "M02": {
+      "facts": [
+        "活动提供一次公开课程",
+        "报名表可以收集参加者的时间偏好"
+      ],
+      "id": "M02",
+      "tags": [
+        "课程",
+        "学习",
+        "活动",
+        "校园"
+      ]
+    }
+  },
+  "script": {
+    "deliverable": "完整脚本与互动环节",
+    "generation_mode": "local_mock",
+    "sections": [
+      {
+        "text": "本次活动围绕字幕产品活动展开。",
+        "title": "主题"
+      },
+      {
+        "text": "产品支持字幕编辑；用户可以修改导出的脚本文本；活动提供一次公开课程；报名表可以收集参加者的时间偏好",
+        "title": "素材事实"
+      },
+      {
+        "text": "参与者可以了解素材信息，并选择后续关注内容。",
+        "title": "行动提示"
+      }
+    ],
+    "source_ids": [
+      "M01",
+      "M02"
+    ],
+    "theme": "字幕产品活动",
+    "variant": "premium"
+  },
+  "saved": {
+    "plan_id": "plan_181fb83df3b93ea5",
+    "request_id": "online-E07-duplicate-r02",
+    "storage": "sqlite:plans"
+  },
+  "cost": {
+    "spent": 12,
+    "events": [
+      {
+        "amount": 12,
+        "plan_version": 1,
+        "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+        "tool": "generate_script"
+      }
+    ],
+    "estimate": {
+      "budget": 20,
+      "budget_gap": 0,
+      "estimated_finish": "2026-10-29T17:12:00+08:00",
+      "feasible": true,
+      "plan_version": 1,
+      "remaining_fee": 0,
+      "remaining_minutes": 1,
+      "script_exists": true,
+      "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+      "spent": 12,
+      "time_gap_minutes": 0,
+      "total_fee": 12
+    },
+    "api_usage": [
+      {
+        "completion_tokens": 106,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 35,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 70
+        },
+        "prompt_tokens": 1616,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 1616
+        },
+        "total_tokens": 1722
+      },
+      {
+        "completion_tokens": 195,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 83,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 111
+        },
+        "prompt_tokens": 2340,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 2340
+        },
+        "total_tokens": 2535
+      },
+      {
+        "completion_tokens": 137,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 69,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 67
+        },
+        "prompt_tokens": 2618,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 2618
+        },
+        "total_tokens": 2755
+      },
+      {
+        "completion_tokens": 62,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": null,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 61
+        },
+        "prompt_tokens": 2938,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 2938
+        },
+        "total_tokens": 3000
+      },
+      {
+        "completion_tokens": 122,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 60,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 61
+        },
+        "prompt_tokens": 3245,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 3245
+        },
+        "total_tokens": 3367
+      },
+      {
+        "completion_tokens": 193,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 132,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 60
+        },
+        "prompt_tokens": 3575,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 3575
+        },
+        "total_tokens": 3768
+      },
+      {
+        "completion_tokens": 164,
+        "completion_tokens_details": {
+          "accepted_prediction_tokens": null,
+          "audio_tokens": null,
+          "reasoning_tokens": 53,
+          "rejected_prediction_tokens": null,
+          "text_tokens": 110
+        },
+        "prompt_tokens": 3594,
+        "prompt_tokens_details": {
+          "audio_tokens": null,
+          "cache_write_tokens": null,
+          "cached_tokens": 1024,
+          "image_tokens": 0,
+          "text_tokens": 3594
+        },
+        "total_tokens": 3758
+      }
+    ],
+    "api_fee": null
+  },
+  "time": {
+    "start_at": "2026-10-29T17:00:00+08:00",
+    "simulated_minutes": 12,
+    "wall_seconds": 10.332
+  },
+  "calls": {
+    "model": 7,
+    "tools": 5
+  },
+  "missing_fields": [],
+  "trace": [
+    {
+      "action": "search_materials",
+      "elapsed_after": 1,
+      "kind": "decision",
+      "model_call": 1,
+      "model_mode": "online",
+      "next_action": "update_plan",
+      "observation": {
+        "charged": 0,
+        "data": {
+          "catalog_version": "2026-10-29-v1",
+          "materials": [
+            {
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ],
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ]
+            },
+            {
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ],
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ]
+            }
+          ],
+          "tool_rules": {
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "variants": {
+            "basic": {
+              "deliverable": "核心脚本与行动提示",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "label": "精简内容方案"
+            },
+            "premium": {
+              "deliverable": "完整脚本与互动环节",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "label": "完整内容方案"
+            }
+          }
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      "parameters": {
+        "query": "字幕产品活动 素材 方案",
+        "reason": "先检索字幕产品活动相关素材与可选方案。"
+      },
+      "plan_version": null,
+      "reason": "先检索字幕产品活动相关素材与可选方案。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "spent_after": 0,
+      "step": 1,
+      "tool_calls": 1
+    },
+    {
+      "action": "update_plan",
+      "kind": "decision",
+      "model_call": 2,
+      "model_mode": "online",
+      "next_action": "estimate_plan",
+      "observation": {
+        "plan": {
+          "material_ids": [
+            "M01",
+            "M02"
+          ],
+          "objective": "字幕产品活动",
+          "steps": [
+            {
+              "depends_on": [],
+              "id": "search",
+              "status": "succeeded",
+              "tool": "search_materials"
+            },
+            {
+              "depends_on": [
+                "search"
+              ],
+              "id": "estimate_before",
+              "status": "succeeded",
+              "tool": "estimate_plan"
+            },
+            {
+              "depends_on": [
+                "estimate_before"
+              ],
+              "id": "script",
+              "status": "succeeded",
+              "tool": "generate_script"
+            },
+            {
+              "depends_on": [
+                "script"
+              ],
+              "id": "estimate_after",
+              "status": "succeeded",
+              "tool": "estimate_plan"
+            },
+            {
+              "depends_on": [
+                "estimate_after"
+              ],
+              "id": "save",
+              "status": "succeeded",
+              "tool": "save_plan"
+            }
+          ],
+          "variant": "premium",
+          "version": 1
+        },
+        "status": "succeeded"
+      },
+      "parameters": {
+        "material_ids": [
+          "M01",
+          "M02"
+        ],
+        "reason": "用 M01 字幕产品事实与 M02 课程/报名素材，选完整方案以覆盖脚本与互动环节，预算与时间均有余量。",
+        "variant": "premium"
+      },
+      "plan_version": null,
+      "reason": "用 M01 字幕产品事实与 M02 课程/报名素材，选完整方案以覆盖脚本与互动环节，预算与时间均有余量。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "step": 2,
+      "tool_calls": 1
+    },
+    {
+      "action": "estimate_plan",
+      "elapsed_after": 2,
+      "kind": "decision",
+      "model_call": 3,
+      "model_mode": "online",
+      "next_action": "generate_script",
+      "observation": {
+        "charged": 0,
+        "data": {
+          "budget": 20,
+          "budget_gap": 0,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "feasible": true,
+          "plan_version": 1,
+          "remaining_fee": 12,
+          "remaining_minutes": 10,
+          "script_exists": false,
+          "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+          "spent": 0,
+          "time_gap_minutes": 0,
+          "total_fee": 12
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      "parameters": {
+        "reason": "按已建立的 premium 计划（M01+M02）核算费用与时间是否在预算 20、截止 18:00 内。"
+      },
+      "plan_version": 1,
+      "reason": "按已建立的 premium 计划（M01+M02）核算费用与时间是否在预算 20、截止 18:00 内。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "spent_after": 0,
+      "step": 3,
+      "tool_calls": 2
+    },
+    {
+      "action": "generate_script",
+      "elapsed_after": 10,
+      "kind": "decision",
+      "model_call": 4,
+      "model_mode": "online",
+      "next_action": "estimate_plan",
+      "observation": {
+        "charged": 12,
+        "data": {
+          "charged": 12,
+          "script": {
+            "deliverable": "完整脚本与互动环节",
+            "generation_mode": "local_mock",
+            "sections": [
+              {
+                "text": "本次活动围绕字幕产品活动展开。",
+                "title": "主题"
+              },
+              {
+                "text": "产品支持字幕编辑；用户可以修改导出的脚本文本；活动提供一次公开课程；报名表可以收集参加者的时间偏好",
+                "title": "素材事实"
+              },
+              {
+                "text": "参与者可以了解素材信息，并选择后续关注内容。",
+                "title": "行动提示"
+              }
+            ],
+            "source_ids": [
+              "M01",
+              "M02"
+            ],
+            "theme": "字幕产品活动",
+            "variant": "premium"
+          },
+          "total_spent": 12
+        },
+        "elapsed_minutes": 8,
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      "parameters": {
+        "reason": "当前 premium 方案估算可行（费用12≤预算20，剩余10分钟可完成），按计划生成脚本。"
+      },
+      "plan_version": 1,
+      "reason": "当前 premium 方案估算可行（费用12≤预算20，剩余10分钟可完成），按计划生成脚本。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "spent_after": 12,
+      "step": 4,
+      "tool_calls": 3
+    },
+    {
+      "action": "estimate_plan",
+      "elapsed_after": 11,
+      "kind": "decision",
+      "model_call": 5,
+      "model_mode": "online",
+      "next_action": "save_plan",
+      "observation": {
+        "charged": 0,
+        "data": {
+          "budget": 20,
+          "budget_gap": 0,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "feasible": true,
+          "plan_version": 1,
+          "remaining_fee": 0,
+          "remaining_minutes": 1,
+          "script_exists": true,
+          "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+          "spent": 12,
+          "time_gap_minutes": 0,
+          "total_fee": 12
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      "parameters": {
+        "reason": "脚本已生成，需重新估算以确认已发生12元后剩余费用与时间仍可行，才能保存。"
+      },
+      "plan_version": 1,
+      "reason": "脚本已生成，需重新估算以确认已发生12元后剩余费用与时间仍可行，才能保存。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "spent_after": 12,
+      "step": 5,
+      "tool_calls": 4
+    },
+    {
+      "action": "save_plan",
+      "elapsed_after": 12,
+      "kind": "decision",
+      "model_call": 6,
+      "model_mode": "online",
+      "next_action": "finish_task",
+      "observation": {
+        "charged": 0,
+        "data": {
+          "plan_id": "plan_181fb83df3b93ea5",
+          "request_id": "online-E07-duplicate-r02",
+          "storage": "sqlite:plans"
+        },
+        "elapsed_minutes": 1,
+        "status": "succeeded",
+        "tool": "save_plan"
+      },
+      "parameters": {
+        "reason": "生成后估算可行（剩余费用0、时间缺口0），保存当前 v1 脚本以完成交付。"
+      },
+      "plan_version": 1,
+      "reason": "生成后估算可行（剩余费用0、时间缺口0），保存当前 v1 脚本以完成交付。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "spent_after": 12,
+      "step": 6,
+      "tool_calls": 5
+    },
+    {
+      "action": "finish_task",
+      "kind": "decision",
+      "model_call": 7,
+      "model_mode": "online",
+      "parameters": {
+        "reason": "脚本已生成并保存成功（plan_id plan_181fb83df3b93ea5），生成后估算可行：费用 12/20，无预算缺口，预计 17:12 完成，早于 18:00 截止，无时间缺口。",
+        "status": "completed"
+      },
+      "plan_version": 1,
+      "reason": "脚本已生成并保存成功（plan_id plan_181fb83df3b93ea5），生成后估算可行：费用 12/20，无预算缺口，预计 17:12 完成，早于 18:00 截止，无时间缺口。",
+      "response_model": "deepseek-v4.1-flash-1017",
+      "step": 7,
+      "tool_calls": 5
+    },
+    {
+      "kind": "terminal",
+      "reason": "脚本已生成并保存成功（plan_id plan_181fb83df3b93ea5），生成后估算可行：费用 12/20，无预算缺口，预计 17:12 完成，早于 18:00 截止，无时间缺口。",
+      "reason_code": "MODEL_FINISH",
+      "status": "completed",
+      "step": 8
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "files_checked": 319,
+  "broken_links": [],
+  "local_key_found_in_deliverables": false,
+  "leak_paths": [],
+  "passed": true,
+  "scope": "Explicit deliverable files only; .env and runtime directories are excluded."
+}

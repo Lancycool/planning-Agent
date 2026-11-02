@@ -1,0 +1,19 @@
+{
+  "wheel_sha256": "5d532e6f39fa39e35f3b5f963504bd75ff01d4e0ace83f1e13fe377011bb06d3",
+  "import_directory": ".runtime/repro-venv/Lib/site-packages/content_agent",
+  "all_package_source_files_match": true,
+  "files": {
+    "catalog.py": true,
+    "cli.py": true,
+    "engine.py": true,
+    "evaluation.py": true,
+    "models.py": true,
+    "schemas.py": true,
+    "storage.py": true,
+    "tools.py": true,
+    "web.py": true,
+    "__init__.py": true
+  },
+  "core_tests": 50,
+  "web_tests_excluded_reason": "Static assets and history are supplied by the source repository, not the core wheel."
+}

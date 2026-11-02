@@ -1,0 +1,87 @@
+{
+  "cost_events": [
+    {
+      "amount": 8,
+      "plan_version": 3,
+      "script_key": "4b035568fd82c362509fb22134f7b32ce5c385f7450c273990b18fe3645800b4",
+      "tool": "generate_script"
+    }
+  ],
+  "plan": {
+    "material_ids": [
+      "M01",
+      "M02"
+    ],
+    "objective": "字幕产品活动，请先评估完整方案；若时间不足，再考虑精简方案",
+    "steps": [
+      {
+        "depends_on": [],
+        "id": "search",
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      {
+        "depends_on": [
+          "search"
+        ],
+        "id": "estimate_before",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_before"
+        ],
+        "id": "script",
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      {
+        "depends_on": [
+          "script"
+        ],
+        "id": "estimate_after",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_after"
+        ],
+        "id": "save",
+        "status": "succeeded",
+        "tool": "save_plan"
+      }
+    ],
+    "variant": "basic",
+    "version": 3
+  },
+  "plan_id": "plan_c0fb0e14769b6486",
+  "request_id": "online-E12-time-replan-r01",
+  "script": {
+    "deliverable": "核心脚本与行动提示",
+    "generation_mode": "local_mock",
+    "sections": [
+      {
+        "text": "本次活动围绕字幕产品活动，请先评估完整方案；若时间不足，再考虑精简方案展开。",
+        "title": "主题"
+      },
+      {
+        "text": "产品支持字幕编辑；用户可以修改导出的脚本文本；活动提供一次公开课程；报名表可以收集参加者的时间偏好",
+        "title": "素材事实"
+      },
+      {
+        "text": "参与者可以了解素材信息，并选择后续关注内容。",
+        "title": "行动提示"
+      }
+    ],
+    "source_ids": [
+      "M01",
+      "M02"
+    ],
+    "theme": "字幕产品活动，请先评估完整方案；若时间不足，再考虑精简方案",
+    "variant": "basic"
+  },
+  "simulated_finish": "2026-10-29T17:08:00+08:00",
+  "total_spent": 8
+}

@@ -1,0 +1,540 @@
+{
+  "verified": true,
+  "cases_checked": 38,
+  "consistency_errors": [],
+  "all_cases_passed": true,
+  "cases": [
+    {
+      "directory": "examples/mock/E01-normal",
+      "scenario": "E01-normal",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E02-missing-budget",
+      "scenario": "E02-missing-budget",
+      "model_mode": "mock",
+      "status": "waiting_input",
+      "spent": 0,
+      "model_calls": 0,
+      "simulated_minutes": 0,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E03-missing-deadline",
+      "scenario": "E03-missing-deadline",
+      "model_mode": "mock",
+      "status": "waiting_input",
+      "spent": 0,
+      "model_calls": 0,
+      "simulated_minutes": 0,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E04-tool-failure",
+      "scenario": "E04-tool-failure",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 10,
+      "simulated_minutes": 16,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E05-replan",
+      "scenario": "E05-replan",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 9,
+      "simulated_minutes": 8,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E06-no-feasible-plan",
+      "scenario": "E06-no-feasible-plan",
+      "model_mode": "mock",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 6,
+      "simulated_minutes": 3,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E07-duplicate",
+      "scenario": "E07-duplicate",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E08-save-failure",
+      "scenario": "E08-save-failure",
+      "model_mode": "mock",
+      "status": "incomplete",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E09-step-limit",
+      "scenario": "E09-step-limit",
+      "model_mode": "mock",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 1,
+      "simulated_minutes": 1,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E10-deadline",
+      "scenario": "E10-deadline",
+      "model_mode": "mock",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 6,
+      "simulated_minutes": 3,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E11-changed-prices",
+      "scenario": "E11-changed-prices",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 6,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E12-time-replan",
+      "scenario": "E12-time-replan",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 9,
+      "simulated_minutes": 8,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E13-repeated-generation-failure",
+      "scenario": "E13-repeated-generation-failure",
+      "model_mode": "mock",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 11,
+      "simulated_minutes": 19,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E14-persistent-save-failure",
+      "scenario": "E14-persistent-save-failure",
+      "model_mode": "mock",
+      "status": "incomplete",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/mock/E15-empty-materials",
+      "scenario": "E15-empty-materials",
+      "model_mode": "mock",
+      "status": "waiting_input",
+      "spent": 0,
+      "model_calls": 2,
+      "simulated_minutes": 1,
+      "total_tokens": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online/E01-normal",
+      "scenario": "E01-normal",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 20917,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online/E04-tool-failure",
+      "scenario": "E04-tool-failure",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 11,
+      "simulated_minutes": 17,
+      "total_tokens": 34898,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online/E05-replan",
+      "scenario": "E05-replan",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 9,
+      "simulated_minutes": 8,
+      "total_tokens": 28632,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E06-no-feasible-plan-r01",
+      "scenario": "E06-no-feasible-plan",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 5,
+      "simulated_minutes": 3,
+      "total_tokens": 14261,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E06-no-feasible-plan-r02",
+      "scenario": "E06-no-feasible-plan",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 7,
+      "simulated_minutes": 5,
+      "total_tokens": 22468,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E07-duplicate-r01",
+      "scenario": "E07-duplicate",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 20917,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E07-duplicate-r02",
+      "scenario": "E07-duplicate",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 20905,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E08-save-failure-r01",
+      "scenario": "E08-save-failure",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 8,
+      "simulated_minutes": 13,
+      "total_tokens": 24545,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E08-save-failure-r02",
+      "scenario": "E08-save-failure",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 12,
+      "model_calls": 8,
+      "simulated_minutes": 13,
+      "total_tokens": 24642,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E09-step-limit-r01",
+      "scenario": "E09-step-limit",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 1,
+      "simulated_minutes": 0,
+      "total_tokens": 2796,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E09-step-limit-r02",
+      "scenario": "E09-step-limit",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 1,
+      "simulated_minutes": 0,
+      "total_tokens": 2497,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E10-deadline-r01",
+      "scenario": "E10-deadline",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 3,
+      "simulated_minutes": 1,
+      "total_tokens": 7804,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E10-deadline-r02",
+      "scenario": "E10-deadline",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 4,
+      "simulated_minutes": 2,
+      "total_tokens": 10934,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E11-changed-prices-r01",
+      "scenario": "E11-changed-prices",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 6,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 21211,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E11-changed-prices-r02",
+      "scenario": "E11-changed-prices",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 6,
+      "model_calls": 7,
+      "simulated_minutes": 12,
+      "total_tokens": 21110,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E12-time-replan-r01",
+      "scenario": "E12-time-replan",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 10,
+      "simulated_minutes": 8,
+      "total_tokens": 34150,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E12-time-replan-r02",
+      "scenario": "E12-time-replan",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 9,
+      "simulated_minutes": 8,
+      "total_tokens": 29517,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E13-repeated-generation-failure-r01",
+      "scenario": "E13-repeated-generation-failure",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 0,
+      "model_calls": 8,
+      "simulated_minutes": 14,
+      "total_tokens": 25211,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E13-repeated-generation-failure-r02",
+      "scenario": "E13-repeated-generation-failure",
+      "model_mode": "online",
+      "status": "completed",
+      "spent": 8,
+      "model_calls": 13,
+      "simulated_minutes": 21,
+      "total_tokens": 43616,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E14-persistent-save-failure-r01",
+      "scenario": "E14-persistent-save-failure",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 12,
+      "model_calls": 10,
+      "simulated_minutes": 15,
+      "total_tokens": 31971,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E14-persistent-save-failure-r02",
+      "scenario": "E14-persistent-save-failure",
+      "model_mode": "online",
+      "status": "incomplete",
+      "spent": 12,
+      "model_calls": 11,
+      "simulated_minutes": 16,
+      "total_tokens": 35719,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E15-empty-materials-r01",
+      "scenario": "E15-empty-materials",
+      "model_mode": "online",
+      "status": "waiting_input",
+      "spent": 0,
+      "model_calls": 5,
+      "simulated_minutes": 4,
+      "total_tokens": 13098,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "directory": "examples/online-expanded/E15-empty-materials-r02",
+      "scenario": "E15-empty-materials",
+      "model_mode": "online",
+      "status": "waiting_input",
+      "spent": 0,
+      "model_calls": 5,
+      "simulated_minutes": 4,
+      "total_tokens": 12709,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    }
+  ]
+}

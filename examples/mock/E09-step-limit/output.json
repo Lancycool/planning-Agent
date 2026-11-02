@@ -1,0 +1,243 @@
+{
+  "request_id": "mock-E09-step-limit",
+  "run_id": "db39f32f-df91-44ee-a9eb-adbf5c26b9d7",
+  "status": "incomplete",
+  "reason_code": "CALL_LIMIT",
+  "reason": "模型或工具调用上限已达到",
+  "replayed": false,
+  "model_mode": "mock",
+  "model_name": "offline-flow-simulator-v1",
+  "catalog_version": "2026-10-29-v1",
+  "request": {
+    "request_id": "mock-E09-step-limit",
+    "theme": "字幕产品活动",
+    "budget": 20,
+    "deadline": "2026-10-29T18:00:00+08:00"
+  },
+  "plan": null,
+  "plan_history": [],
+  "steps": [
+    {
+      "id": 1,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "plan_version": null,
+      "result": {
+        "status": "succeeded",
+        "data": {
+          "materials": [
+            {
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ],
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ]
+            },
+            {
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ],
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ]
+            }
+          ],
+          "variants": {
+            "premium": {
+              "label": "完整内容方案",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "deliverable": "完整脚本与互动环节"
+            },
+            "basic": {
+              "label": "精简内容方案",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "deliverable": "核心脚本与行动提示"
+            }
+          },
+          "tool_rules": {
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "catalog_version": "2026-10-29-v1"
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "search_materials"
+      },
+      "spent_after": 0,
+      "elapsed_after": 1
+    }
+  ],
+  "materials": {
+    "M01": {
+      "id": "M01",
+      "tags": [
+        "字幕",
+        "产品",
+        "内容",
+        "活动",
+        "办公"
+      ],
+      "facts": [
+        "产品支持字幕编辑",
+        "用户可以修改导出的脚本文本"
+      ]
+    },
+    "M02": {
+      "id": "M02",
+      "tags": [
+        "课程",
+        "学习",
+        "活动",
+        "校园"
+      ],
+      "facts": [
+        "活动提供一次公开课程",
+        "报名表可以收集参加者的时间偏好"
+      ]
+    }
+  },
+  "script": null,
+  "saved": null,
+  "cost": {
+    "spent": 0,
+    "events": [],
+    "estimate": null,
+    "api_usage": [],
+    "api_fee": null
+  },
+  "time": {
+    "start_at": "2026-10-29T17:00:00+08:00",
+    "simulated_minutes": 1,
+    "wall_seconds": 0.0399
+  },
+  "calls": {
+    "model": 1,
+    "tools": 1
+  },
+  "missing_fields": [],
+  "trace": [
+    {
+      "step": 1,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "search_materials",
+      "parameters": {
+        "reason": "我先检索主题对应素材。",
+        "query": "字幕产品活动"
+      },
+      "reason": "我先检索主题对应素材。",
+      "plan_version": null,
+      "model_call": 1,
+      "tool_calls": 1,
+      "observation": {
+        "status": "succeeded",
+        "data": {
+          "materials": [
+            {
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ],
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ]
+            },
+            {
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ],
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ]
+            }
+          ],
+          "variants": {
+            "premium": {
+              "label": "完整内容方案",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "deliverable": "完整脚本与互动环节"
+            },
+            "basic": {
+              "label": "精简内容方案",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "deliverable": "核心脚本与行动提示"
+            }
+          },
+          "tool_rules": {
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "catalog_version": "2026-10-29-v1"
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "search_materials"
+      },
+      "spent_after": 0,
+      "elapsed_after": 1
+    },
+    {
+      "step": 2,
+      "kind": "terminal",
+      "status": "incomplete",
+      "reason_code": "CALL_LIMIT",
+      "reason": "模型或工具调用上限已达到"
+    }
+  ]
+}

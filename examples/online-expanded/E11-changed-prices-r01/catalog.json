@@ -1,0 +1,72 @@
+{
+  "version": "2026-10-29-v1-changed-prices",
+  "materials": [
+    {
+      "id": "M01",
+      "tags": [
+        "字幕",
+        "产品",
+        "内容",
+        "活动",
+        "办公"
+      ],
+      "facts": [
+        "产品支持字幕编辑",
+        "用户可以修改导出的脚本文本"
+      ]
+    },
+    {
+      "id": "M02",
+      "tags": [
+        "课程",
+        "学习",
+        "活动",
+        "校园"
+      ],
+      "facts": [
+        "活动提供一次公开课程",
+        "报名表可以收集参加者的时间偏好"
+      ]
+    }
+  ],
+  "variants": {
+    "premium": {
+      "label": "完整内容方案",
+      "generation_fee": 6,
+      "generation_minutes": 8,
+      "deliverable": "完整脚本与互动环节"
+    },
+    "basic": {
+      "label": "精简内容方案",
+      "generation_fee": 11,
+      "generation_minutes": 3,
+      "deliverable": "核心脚本与行动提示"
+    }
+  },
+  "tools": {
+    "search_materials": {
+      "fee": 0,
+      "minutes": 1
+    },
+    "estimate_plan": {
+      "fee": 0,
+      "minutes": 1
+    },
+    "generate_script": {
+      "fee": "variant.generation_fee",
+      "minutes": "variant.generation_minutes"
+    },
+    "save_plan": {
+      "fee": 0,
+      "minutes": 1
+    }
+  },
+  "billing": {
+    "unit": "模拟单位（整数）",
+    "charge_on": "generate_script 成功返回时",
+    "failed_call_fee": 0,
+    "failed_call_time": "与成功调用相同",
+    "estimate_is_spend": false,
+    "no_real_payment_or_publication": true
+  }
+}

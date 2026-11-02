@@ -1,0 +1,28 @@
+TAP version 13
+# Subtest: retries and page reload reuse the same task ID
+ok 1 - retries and page reload reuse the same task ID
+  ---
+  duration_ms: 2.1205
+  type: 'test'
+  ...
+# Subtest: changed input or explicit new task gets a different ID
+ok 2 - changed input or explicit new task gets a different ID
+  ---
+  duration_ms: 0.6418
+  type: 'test'
+  ...
+# Subtest: switching to the real model starts a separate task
+ok 3 - switching to the real model starts a separate task
+  ---
+  duration_ms: 0.4914
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 14.5707

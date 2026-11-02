@@ -1,0 +1,85 @@
+{
+  "cost_events": [
+    {
+      "amount": 8,
+      "plan_version": 2,
+      "script_key": "91ebb62099d60f1506c451c0f9e1a3adc61f5fcefc6c44fcdc59e6a6fd3a0acf",
+      "tool": "generate_script"
+    }
+  ],
+  "plan": {
+    "material_ids": [
+      "M01"
+    ],
+    "objective": "字幕产品活动，请先评估完整方案；若预算超限，再考虑精简方案",
+    "steps": [
+      {
+        "depends_on": [],
+        "id": "search",
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      {
+        "depends_on": [
+          "search"
+        ],
+        "id": "estimate_before",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_before"
+        ],
+        "id": "script",
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      {
+        "depends_on": [
+          "script"
+        ],
+        "id": "estimate_after",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_after"
+        ],
+        "id": "save",
+        "status": "succeeded",
+        "tool": "save_plan"
+      }
+    ],
+    "variant": "basic",
+    "version": 2
+  },
+  "plan_id": "plan_89e039d127fe4fbc",
+  "request_id": "mock-E05-replan",
+  "script": {
+    "deliverable": "核心脚本与行动提示",
+    "generation_mode": "local_mock",
+    "sections": [
+      {
+        "text": "本次活动围绕字幕产品活动，请先评估完整方案；若预算超限，再考虑精简方案展开。",
+        "title": "主题"
+      },
+      {
+        "text": "产品支持字幕编辑；用户可以修改导出的脚本文本",
+        "title": "素材事实"
+      },
+      {
+        "text": "参与者可以了解素材信息，并选择后续关注内容。",
+        "title": "行动提示"
+      }
+    ],
+    "source_ids": [
+      "M01"
+    ],
+    "theme": "字幕产品活动，请先评估完整方案；若预算超限，再考虑精简方案",
+    "variant": "basic"
+  },
+  "simulated_finish": "2026-10-29T17:08:00+08:00",
+  "total_spent": 8
+}

@@ -1,0 +1,23 @@
+{
+  "recorded_at": "2026-11-02T10:28:47.807098+08:00",
+  "task": 1,
+  "repository": "https://github.com/Lancycool/planning-Agent",
+  "release_tag": "submission-2026-11-02",
+  "python_tests": 55,
+  "wheel_core_tests": 50,
+  "frontend_tests": 3,
+  "mock_cases": 15,
+  "online_cases": 23,
+  "online_expected_outcomes_passed": 23,
+  "online_terminal_statuses": {
+    "completed": 12,
+    "incomplete": 9,
+    "waiting_input": 2
+  },
+  "online_total_tokens": 504528,
+  "api_fee": null,
+  "online_run_wall_seconds_sum": 564.9876,
+  "full_development_elapsed_seconds": null,
+  "timing_scope": "Actual run seconds only; overlapping batches and earlier development are not a complete project timer.",
+  "evidence_check_passed": true
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "mock-E02-missing-budget",
+  "run_id": "db314184-c38b-4678-908a-ff0599e96f93",
+  "status": "waiting_input",
+  "reason_code": "MISSING_FIELDS",
+  "reason": "请补充：budget",
+  "replayed": false,
+  "model_mode": "mock",
+  "model_name": "offline-flow-simulator-v1",
+  "catalog_version": "2026-10-29-v1",
+  "request": {
+    "request_id": "mock-E02-missing-budget",
+    "theme": "字幕产品活动",
+    "budget": null,
+    "deadline": "2026-10-29T18:00:00+08:00"
+  },
+  "plan": null,
+  "plan_history": [],
+  "steps": [],
+  "materials": {},
+  "script": null,
+  "saved": null,
+  "cost": {
+    "spent": 0,
+    "events": [],
+    "estimate": null,
+    "api_usage": [],
+    "api_fee": null
+  },
+  "time": {
+    "start_at": "2026-10-29T17:00:00+08:00",
+    "simulated_minutes": 0,
+    "wall_seconds": 0.0122
+  },
+  "calls": {
+    "model": 0,
+    "tools": 0
+  },
+  "missing_fields": [
+    "budget"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "kind": "terminal",
+      "status": "waiting_input",
+      "reason_code": "MISSING_FIELDS",
+      "reason": "请补充：budget"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "step": 1,
+    "kind": "terminal",
+    "status": "waiting_input",
+    "reason_code": "MISSING_FIELDS",
+    "reason": "请补充：deadline"
+  }
+]

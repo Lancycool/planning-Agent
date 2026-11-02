@@ -1,0 +1,85 @@
+{
+  "cost_events": [
+    {
+      "amount": 8,
+      "plan_version": 2,
+      "script_key": "abe32109fb4a722a913e207aaf7bf09b1e1cfc663799875a0b2102207c3c3b72",
+      "tool": "generate_script"
+    }
+  ],
+  "plan": {
+    "material_ids": [
+      "M01"
+    ],
+    "objective": "字幕产品活动",
+    "steps": [
+      {
+        "depends_on": [],
+        "id": "search",
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      {
+        "depends_on": [
+          "search"
+        ],
+        "id": "estimate_before",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_before"
+        ],
+        "id": "script",
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      {
+        "depends_on": [
+          "script"
+        ],
+        "id": "estimate_after",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_after"
+        ],
+        "id": "save",
+        "status": "succeeded",
+        "tool": "save_plan"
+      }
+    ],
+    "variant": "basic",
+    "version": 2
+  },
+  "plan_id": "plan_e28851fbbeb2ab3c",
+  "request_id": "mock-E13-repeated-generation-failure",
+  "script": {
+    "deliverable": "核心脚本与行动提示",
+    "generation_mode": "local_mock",
+    "sections": [
+      {
+        "text": "本次活动围绕字幕产品活动展开。",
+        "title": "主题"
+      },
+      {
+        "text": "产品支持字幕编辑；用户可以修改导出的脚本文本",
+        "title": "素材事实"
+      },
+      {
+        "text": "参与者可以了解素材信息，并选择后续关注内容。",
+        "title": "行动提示"
+      }
+    ],
+    "source_ids": [
+      "M01"
+    ],
+    "theme": "字幕产品活动",
+    "variant": "basic"
+  },
+  "simulated_finish": "2026-10-29T17:19:00+08:00",
+  "total_spent": 8
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "step": 1,
+    "kind": "decision",
+    "model_mode": "mock",
+    "response_model": "offline-flow-simulator-v1",
+    "action": "search_materials",
+    "parameters": {
+      "reason": "我先检索主题对应素材。",
+      "query": "字幕产品活动"
+    },
+    "reason": "我先检索主题对应素材。",
+    "plan_version": null,
+    "model_call": 1,
+    "tool_calls": 1,
+    "observation": {
+      "status": "succeeded",
+      "data": {
+        "materials": [],
+        "variants": {
+          "premium": {
+            "label": "完整内容方案",
+            "generation_fee": 12,
+            "generation_minutes": 8,
+            "deliverable": "完整脚本与互动环节"
+          },
+          "basic": {
+            "label": "精简内容方案",
+            "generation_fee": 8,
+            "generation_minutes": 3,
+            "deliverable": "核心脚本与行动提示"
+          }
+        },
+        "tool_rules": {
+          "search_materials": {
+            "fee": 0,
+            "minutes": 1
+          },
+          "estimate_plan": {
+            "fee": 0,
+            "minutes": 1
+          },
+          "generate_script": {
+            "fee": "variant.generation_fee",
+            "minutes": "variant.generation_minutes"
+          },
+          "save_plan": {
+            "fee": 0,
+            "minutes": 1
+          }
+        },
+        "catalog_version": "2026-10-29-v1-empty-materials"
+      },
+      "charged": 0,
+      "elapsed_minutes": 1,
+      "tool": "search_materials"
+    },
+    "spent_after": 0,
+    "elapsed_after": 1,
+    "next_action": "request_information"
+  },
+  {
+    "step": 2,
+    "kind": "decision",
+    "model_mode": "mock",
+    "response_model": "offline-flow-simulator-v1",
+    "action": "request_information",
+    "parameters": {
+      "reason": "检索没有素材，请补充资料。",
+      "missing_fields": [
+        "materials"
+      ]
+    },
+    "reason": "检索没有素材，请补充资料。",
+    "plan_version": null,
+    "model_call": 2,
+    "tool_calls": 1
+  },
+  {
+    "step": 3,
+    "kind": "terminal",
+    "status": "waiting_input",
+    "reason_code": "NEEDS_INFORMATION",
+    "reason": "检索没有素材，请补充资料。"
+  }
+]

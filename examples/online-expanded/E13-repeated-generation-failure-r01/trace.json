@@ -1,0 +1,382 @@
+[
+  {
+    "step": 1,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "search_materials",
+    "parameters": {
+      "reason": "先检索“字幕产品活动”可用素材与候选方案的费用、耗时，判断在一小时与 20 预算内是否可行。",
+      "query": "字幕产品活动 素材 方案 费用 耗时"
+    },
+    "reason": "先检索“字幕产品活动”可用素材与候选方案的费用、耗时，判断在一小时与 20 预算内是否可行。",
+    "plan_version": null,
+    "model_call": 1,
+    "tool_calls": 1,
+    "observation": {
+      "status": "succeeded",
+      "data": {
+        "materials": [
+          {
+            "id": "M01",
+            "tags": [
+              "字幕",
+              "产品",
+              "内容",
+              "活动",
+              "办公"
+            ],
+            "facts": [
+              "产品支持字幕编辑",
+              "用户可以修改导出的脚本文本"
+            ]
+          },
+          {
+            "id": "M02",
+            "tags": [
+              "课程",
+              "学习",
+              "活动",
+              "校园"
+            ],
+            "facts": [
+              "活动提供一次公开课程",
+              "报名表可以收集参加者的时间偏好"
+            ]
+          }
+        ],
+        "variants": {
+          "premium": {
+            "label": "完整内容方案",
+            "generation_fee": 12,
+            "generation_minutes": 8,
+            "deliverable": "完整脚本与互动环节"
+          },
+          "basic": {
+            "label": "精简内容方案",
+            "generation_fee": 8,
+            "generation_minutes": 3,
+            "deliverable": "核心脚本与行动提示"
+          }
+        },
+        "tool_rules": {
+          "search_materials": {
+            "fee": 0,
+            "minutes": 1
+          },
+          "estimate_plan": {
+            "fee": 0,
+            "minutes": 1
+          },
+          "generate_script": {
+            "fee": "variant.generation_fee",
+            "minutes": "variant.generation_minutes"
+          },
+          "save_plan": {
+            "fee": 0,
+            "minutes": 1
+          }
+        },
+        "catalog_version": "2026-10-29-v1"
+      },
+      "charged": 0,
+      "elapsed_minutes": 1,
+      "tool": "search_materials"
+    },
+    "spent_after": 0,
+    "elapsed_after": 1,
+    "next_action": "update_plan"
+  },
+  {
+    "step": 2,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "update_plan",
+    "parameters": {
+      "reason": "主题为字幕产品活动，M01涵盖字幕产品特性、M02提供活动课程形式；预算20与剩余59分钟均足以支持完整方案。",
+      "variant": "premium",
+      "material_ids": [
+        "M01",
+        "M02"
+      ]
+    },
+    "reason": "主题为字幕产品活动，M01涵盖字幕产品特性、M02提供活动课程形式；预算20与剩余59分钟均足以支持完整方案。",
+    "plan_version": null,
+    "model_call": 2,
+    "tool_calls": 1,
+    "observation": {
+      "status": "succeeded",
+      "plan": {
+        "version": 1,
+        "variant": "premium",
+        "material_ids": [
+          "M01",
+          "M02"
+        ],
+        "objective": "字幕产品活动",
+        "steps": [
+          {
+            "id": "search",
+            "tool": "search_materials",
+            "depends_on": [],
+            "status": "succeeded"
+          },
+          {
+            "id": "estimate_before",
+            "tool": "estimate_plan",
+            "depends_on": [
+              "search"
+            ],
+            "status": "succeeded"
+          },
+          {
+            "id": "script",
+            "tool": "generate_script",
+            "depends_on": [
+              "estimate_before"
+            ],
+            "status": "failed"
+          },
+          {
+            "id": "estimate_after",
+            "tool": "estimate_plan",
+            "depends_on": [
+              "script"
+            ],
+            "status": "pending"
+          },
+          {
+            "id": "save",
+            "tool": "save_plan",
+            "depends_on": [
+              "estimate_after"
+            ],
+            "status": "pending"
+          }
+        ]
+      }
+    },
+    "next_action": "estimate_plan"
+  },
+  {
+    "step": 3,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "estimate_plan",
+    "parameters": {
+      "reason": "当前计划选用 premium 方案与 M01、M02，先核算预算和截止时间是否可行。"
+    },
+    "reason": "当前计划选用 premium 方案与 M01、M02，先核算预算和截止时间是否可行。",
+    "plan_version": 1,
+    "model_call": 3,
+    "tool_calls": 2,
+    "observation": {
+      "status": "succeeded",
+      "data": {
+        "plan_version": 1,
+        "script_key": "592319efd9b613d430d0c1ff158de2b07923048b6594c1d3f0de9c98696d0c65",
+        "script_exists": false,
+        "spent": 0,
+        "remaining_fee": 12,
+        "total_fee": 12,
+        "budget": 20,
+        "budget_gap": 0,
+        "remaining_minutes": 10,
+        "estimated_finish": "2026-10-29T17:12:00+08:00",
+        "time_gap_minutes": 0,
+        "feasible": true
+      },
+      "charged": 0,
+      "elapsed_minutes": 1,
+      "tool": "estimate_plan"
+    },
+    "spent_after": 0,
+    "elapsed_after": 2,
+    "next_action": "generate_script"
+  },
+  {
+    "step": 4,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "generate_script",
+    "parameters": {
+      "reason": "当前 premium 方案已估算可行（费用12/预算20，17:12 前完成），直接按计划生成脚本。"
+    },
+    "reason": "当前 premium 方案已估算可行（费用12/预算20，17:12 前完成），直接按计划生成脚本。",
+    "plan_version": 1,
+    "model_call": 4,
+    "tool_calls": 3,
+    "observation": {
+      "status": "failed",
+      "error_code": "INJECTED_FAILURE",
+      "message": "合成场景注入工具失败",
+      "retryable": true,
+      "charged": 0,
+      "elapsed_minutes": 8,
+      "tool": "generate_script"
+    },
+    "spent_after": 0,
+    "elapsed_after": 10,
+    "next_action": "update_plan"
+  },
+  {
+    "step": 5,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "update_plan",
+    "parameters": {
+      "reason": "首次 premium 生成失败（未收费但耗时 8 分钟），时间余量被消耗；改用 3 分钟的精简方案 basic 保留同样两份素材，先重新估算是否还来得及在截止前生成并保存。",
+      "variant": "basic",
+      "material_ids": [
+        "M01",
+        "M02"
+      ]
+    },
+    "reason": "首次 premium 生成失败（未收费但耗时 8 分钟），时间余量被消耗；改用 3 分钟的精简方案 basic 保留同样两份素材，先重新估算是否还来得及在截止前生成并保存。",
+    "plan_version": 1,
+    "model_call": 5,
+    "tool_calls": 3,
+    "observation": {
+      "status": "succeeded",
+      "plan": {
+        "version": 2,
+        "variant": "basic",
+        "material_ids": [
+          "M01",
+          "M02"
+        ],
+        "objective": "字幕产品活动",
+        "steps": [
+          {
+            "id": "search",
+            "tool": "search_materials",
+            "depends_on": [],
+            "status": "succeeded"
+          },
+          {
+            "id": "estimate_before",
+            "tool": "estimate_plan",
+            "depends_on": [
+              "search"
+            ],
+            "status": "succeeded"
+          },
+          {
+            "id": "script",
+            "tool": "generate_script",
+            "depends_on": [
+              "estimate_before"
+            ],
+            "status": "failed"
+          },
+          {
+            "id": "estimate_after",
+            "tool": "estimate_plan",
+            "depends_on": [
+              "script"
+            ],
+            "status": "pending"
+          },
+          {
+            "id": "save",
+            "tool": "save_plan",
+            "depends_on": [
+              "estimate_after"
+            ],
+            "status": "pending"
+          }
+        ]
+      }
+    },
+    "next_action": "estimate_plan"
+  },
+  {
+    "step": 6,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "estimate_plan",
+    "parameters": {
+      "reason": "已切换到精简方案（版本2），先核算费用与时间是否可行，再决定是否重新生成。"
+    },
+    "reason": "已切换到精简方案（版本2），先核算费用与时间是否可行，再决定是否重新生成。",
+    "plan_version": 2,
+    "model_call": 6,
+    "tool_calls": 4,
+    "observation": {
+      "status": "succeeded",
+      "data": {
+        "plan_version": 2,
+        "script_key": "71e9312fdbb62643dfae07ead11800cdc99c0f82de16098418927cce379a50df",
+        "script_exists": false,
+        "spent": 0,
+        "remaining_fee": 8,
+        "total_fee": 8,
+        "budget": 20,
+        "budget_gap": 0,
+        "remaining_minutes": 5,
+        "estimated_finish": "2026-10-29T17:16:00+08:00",
+        "time_gap_minutes": 0,
+        "feasible": true
+      },
+      "charged": 0,
+      "elapsed_minutes": 1,
+      "tool": "estimate_plan"
+    },
+    "spent_after": 0,
+    "elapsed_after": 11,
+    "next_action": "generate_script"
+  },
+  {
+    "step": 7,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "generate_script",
+    "parameters": {
+      "reason": "v2 精简方案估算可行（8 元/3 分钟，剩余 5 分钟恰好覆盖生成+复估+保存），上次失败标记为可重试且未收费，改用更短的 basic 方案重试一次。"
+    },
+    "reason": "v2 精简方案估算可行（8 元/3 分钟，剩余 5 分钟恰好覆盖生成+复估+保存），上次失败标记为可重试且未收费，改用更短的 basic 方案重试一次。",
+    "plan_version": 2,
+    "model_call": 7,
+    "tool_calls": 5,
+    "observation": {
+      "status": "failed",
+      "error_code": "INJECTED_FAILURE",
+      "message": "合成场景注入工具失败",
+      "retryable": true,
+      "charged": 0,
+      "elapsed_minutes": 3,
+      "tool": "generate_script"
+    },
+    "spent_after": 0,
+    "elapsed_after": 14,
+    "next_action": "finish_task"
+  },
+  {
+    "step": 8,
+    "kind": "decision",
+    "model_mode": "online",
+    "response_model": "deepseek-v4.1-flash-1017",
+    "action": "finish_task",
+    "parameters": {
+      "reason": "方案 v2（basic，素材 M01/M02）估算可行（预计费用 8 元≤20 元预算，预计 17:16 完成），但 generate_script 已连续两次因 INJECTED_FAILURE 失败（均未收费、无脚本产物），且无脚本即不能通过生成后估算，也不能 save_plan。为避免无限重试，停止生成与保存，未产生任何支出。缺口：缺少可保存的脚本产物，方案未能保存；预算 20 元全部未使用，距 18:00 截止仍有约 44 分钟，时间不是瓶颈，失败原因为工具侧重复生成失败。",
+      "status": "incomplete"
+    },
+    "reason": "方案 v2（basic，素材 M01/M02）估算可行（预计费用 8 元≤20 元预算，预计 17:16 完成），但 generate_script 已连续两次因 INJECTED_FAILURE 失败（均未收费、无脚本产物），且无脚本即不能通过生成后估算，也不能 save_plan。为避免无限重试，停止生成与保存，未产生任何支出。缺口：缺少可保存的脚本产物，方案未能保存；预算 20 元全部未使用，距 18:00 截止仍有约 44 分钟，时间不是瓶颈，失败原因为工具侧重复生成失败。",
+    "plan_version": 2,
+    "model_call": 8,
+    "tool_calls": 5
+  },
+  {
+    "step": 9,
+    "kind": "terminal",
+    "status": "incomplete",
+    "reason_code": "MODEL_FINISH",
+    "reason": "方案 v2（basic，素材 M01/M02）估算可行（预计费用 8 元≤20 元预算，预计 17:16 完成），但 generate_script 已连续两次因 INJECTED_FAILURE 失败（均未收费、无脚本产物），且无脚本即不能通过生成后估算，也不能 save_plan。为避免无限重试，停止生成与保存，未产生任何支出。缺口：缺少可保存的脚本产物，方案未能保存；预算 20 元全部未使用，距 18:00 截止仍有约 44 分钟，时间不是瓶颈，失败原因为工具侧重复生成失败。"
+  }
+]

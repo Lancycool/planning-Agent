@@ -1,0 +1,74 @@
+{
+  "timezone": "Asia/Shanghai",
+  "observed_start_at": "2026-10-29T16:39:04+08:00",
+  "local_validation_checkpoint_at": "2026-10-29T16:56:13+08:00",
+  "observed_elapsed_seconds": 1029,
+  "timing_scope": "本轮代码开发至本地验证检查点的可核对墙钟时间。此前选题、设计讨论和起点前的环境检查没有完整计时；此数值不是项目全过程总投入。",
+  "stages": [
+    {
+      "stage": "P0",
+      "result": "用户已确认技术栈、模型、接口 Host 和业务规则"
+    },
+    {
+      "stage": "P1",
+      "result": "合成素材、费用耗时表、输入输出和工具契约已建立"
+    },
+    {
+      "stage": "P2",
+      "result": "四类工具、SQLite 状态、防重复与故障注入已实现"
+    },
+    {
+      "stage": "P3",
+      "result": "LangGraph 循环与百炼真实模型已接入，故障配置与模型上下文已隔离"
+    },
+    {
+      "stage": "P4",
+      "result": "33 项测试在开发环境和独立 wheel 环境均通过；13 组实际证据通过一致性检查"
+    },
+    {
+      "stage": "P5-local",
+      "result": "运行步骤、配置模板、评估、AI 使用记录、复盘和密钥检查已完成"
+    },
+    {
+      "stage": "P5-remote",
+      "result": "尚未执行，等待用户确认远程仓库目标与公开范围"
+    }
+  ],
+  "evidence": [
+    "test-results.xml",
+    "clean-environment-tests.xml",
+    "mock/manifest.json",
+    "online/manifest.json",
+    "evidence-check.json",
+    "project-audit.json"
+  ],
+  "known_incomplete": [
+    "失败步骤续跑（可选加分项）",
+    "并发运行",
+    "真实业务工具",
+    "GitHub URL 与最终 commit SHA"
+  ],
+  "revision_2026_11_02": {
+    "recorded_at": "2026-11-02T10:28:47.807098+08:00",
+    "task": 1,
+    "repository": "https://github.com/Lancycool/planning-Agent",
+    "release_tag": "submission-2026-11-02",
+    "python_tests": 55,
+    "wheel_core_tests": 50,
+    "frontend_tests": 3,
+    "mock_cases": 15,
+    "online_cases": 23,
+    "online_expected_outcomes_passed": 23,
+    "online_terminal_statuses": {
+      "completed": 12,
+      "incomplete": 9,
+      "waiting_input": 2
+    },
+    "online_total_tokens": 504528,
+    "api_fee": null,
+    "online_run_wall_seconds_sum": 564.9876,
+    "full_development_elapsed_seconds": null,
+    "timing_scope": "Actual run seconds only; overlapping batches and earlier development are not a complete project timer.",
+    "evidence_check_passed": true
+  }
+}

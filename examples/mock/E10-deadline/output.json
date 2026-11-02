@@ -1,0 +1,686 @@
+{
+  "request_id": "mock-E10-deadline",
+  "run_id": "de6f93c8-722c-4397-be1f-bdd39076359e",
+  "status": "incomplete",
+  "reason_code": "MODEL_FINISH",
+  "reason": "可用方案仍不可行；预算缺口 0，时间缺口 6.0 分钟。",
+  "replayed": false,
+  "model_mode": "mock",
+  "model_name": "offline-flow-simulator-v1",
+  "catalog_version": "2026-10-29-v1",
+  "request": {
+    "request_id": "mock-E10-deadline",
+    "theme": "字幕产品活动",
+    "budget": 20,
+    "deadline": "2026-10-29T17:02:00+08:00"
+  },
+  "plan": {
+    "version": 2,
+    "variant": "basic",
+    "material_ids": [
+      "M01"
+    ],
+    "objective": "字幕产品活动",
+    "steps": [
+      {
+        "id": "search",
+        "tool": "search_materials",
+        "depends_on": [],
+        "status": "succeeded"
+      },
+      {
+        "id": "estimate_before",
+        "tool": "estimate_plan",
+        "depends_on": [
+          "search"
+        ],
+        "status": "succeeded"
+      },
+      {
+        "id": "script",
+        "tool": "generate_script",
+        "depends_on": [
+          "estimate_before"
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "estimate_after",
+        "tool": "estimate_plan",
+        "depends_on": [
+          "script"
+        ],
+        "status": "pending"
+      },
+      {
+        "id": "save",
+        "tool": "save_plan",
+        "depends_on": [
+          "estimate_after"
+        ],
+        "status": "pending"
+      }
+    ]
+  },
+  "plan_history": [
+    {
+      "version": 1,
+      "variant": "premium",
+      "material_ids": [
+        "M01"
+      ],
+      "objective": "字幕产品活动",
+      "steps": [
+        {
+          "id": "search",
+          "tool": "search_materials",
+          "depends_on": [],
+          "status": "succeeded"
+        },
+        {
+          "id": "estimate_before",
+          "tool": "estimate_plan",
+          "depends_on": [
+            "search"
+          ],
+          "status": "succeeded"
+        },
+        {
+          "id": "script",
+          "tool": "generate_script",
+          "depends_on": [
+            "estimate_before"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "estimate_after",
+          "tool": "estimate_plan",
+          "depends_on": [
+            "script"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "save",
+          "tool": "save_plan",
+          "depends_on": [
+            "estimate_after"
+          ],
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "version": 2,
+      "variant": "basic",
+      "material_ids": [
+        "M01"
+      ],
+      "objective": "字幕产品活动",
+      "steps": [
+        {
+          "id": "search",
+          "tool": "search_materials",
+          "depends_on": [],
+          "status": "succeeded"
+        },
+        {
+          "id": "estimate_before",
+          "tool": "estimate_plan",
+          "depends_on": [
+            "search"
+          ],
+          "status": "succeeded"
+        },
+        {
+          "id": "script",
+          "tool": "generate_script",
+          "depends_on": [
+            "estimate_before"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "estimate_after",
+          "tool": "estimate_plan",
+          "depends_on": [
+            "script"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "save",
+          "tool": "save_plan",
+          "depends_on": [
+            "estimate_after"
+          ],
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "tool": "search_materials",
+      "status": "succeeded",
+      "plan_version": null,
+      "result": {
+        "status": "succeeded",
+        "data": {
+          "materials": [
+            {
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ],
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ]
+            },
+            {
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ],
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ]
+            }
+          ],
+          "variants": {
+            "premium": {
+              "label": "完整内容方案",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "deliverable": "完整脚本与互动环节"
+            },
+            "basic": {
+              "label": "精简内容方案",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "deliverable": "核心脚本与行动提示"
+            }
+          },
+          "tool_rules": {
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "catalog_version": "2026-10-29-v1"
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "search_materials"
+      },
+      "spent_after": 0,
+      "elapsed_after": 1
+    },
+    {
+      "id": 2,
+      "tool": "estimate_plan",
+      "status": "succeeded",
+      "plan_version": 1,
+      "result": {
+        "status": "succeeded",
+        "data": {
+          "plan_version": 1,
+          "script_key": "274af7eb77ecea57b9cb96f803d2272c647a51da1def97c6589a54d475f8c9f9",
+          "script_exists": false,
+          "spent": 0,
+          "remaining_fee": 12,
+          "total_fee": 12,
+          "budget": 20,
+          "budget_gap": 0,
+          "remaining_minutes": 10,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "time_gap_minutes": 10.0,
+          "feasible": false
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "estimate_plan"
+      },
+      "spent_after": 0,
+      "elapsed_after": 2
+    },
+    {
+      "id": 3,
+      "tool": "estimate_plan",
+      "status": "succeeded",
+      "plan_version": 2,
+      "result": {
+        "status": "succeeded",
+        "data": {
+          "plan_version": 2,
+          "script_key": "abe32109fb4a722a913e207aaf7bf09b1e1cfc663799875a0b2102207c3c3b72",
+          "script_exists": false,
+          "spent": 0,
+          "remaining_fee": 8,
+          "total_fee": 8,
+          "budget": 20,
+          "budget_gap": 0,
+          "remaining_minutes": 5,
+          "estimated_finish": "2026-10-29T17:08:00+08:00",
+          "time_gap_minutes": 6.0,
+          "feasible": false
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "estimate_plan"
+      },
+      "spent_after": 0,
+      "elapsed_after": 3
+    }
+  ],
+  "materials": {
+    "M01": {
+      "id": "M01",
+      "tags": [
+        "字幕",
+        "产品",
+        "内容",
+        "活动",
+        "办公"
+      ],
+      "facts": [
+        "产品支持字幕编辑",
+        "用户可以修改导出的脚本文本"
+      ]
+    },
+    "M02": {
+      "id": "M02",
+      "tags": [
+        "课程",
+        "学习",
+        "活动",
+        "校园"
+      ],
+      "facts": [
+        "活动提供一次公开课程",
+        "报名表可以收集参加者的时间偏好"
+      ]
+    }
+  },
+  "script": null,
+  "saved": null,
+  "cost": {
+    "spent": 0,
+    "events": [],
+    "estimate": {
+      "plan_version": 2,
+      "script_key": "abe32109fb4a722a913e207aaf7bf09b1e1cfc663799875a0b2102207c3c3b72",
+      "script_exists": false,
+      "spent": 0,
+      "remaining_fee": 8,
+      "total_fee": 8,
+      "budget": 20,
+      "budget_gap": 0,
+      "remaining_minutes": 5,
+      "estimated_finish": "2026-10-29T17:08:00+08:00",
+      "time_gap_minutes": 6.0,
+      "feasible": false
+    },
+    "api_usage": [],
+    "api_fee": null
+  },
+  "time": {
+    "start_at": "2026-10-29T17:00:00+08:00",
+    "simulated_minutes": 3,
+    "wall_seconds": 0.1039
+  },
+  "calls": {
+    "model": 6,
+    "tools": 3
+  },
+  "missing_fields": [],
+  "trace": [
+    {
+      "step": 1,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "search_materials",
+      "parameters": {
+        "reason": "我先检索主题对应素材。",
+        "query": "字幕产品活动"
+      },
+      "reason": "我先检索主题对应素材。",
+      "plan_version": null,
+      "model_call": 1,
+      "tool_calls": 1,
+      "observation": {
+        "status": "succeeded",
+        "data": {
+          "materials": [
+            {
+              "id": "M01",
+              "tags": [
+                "字幕",
+                "产品",
+                "内容",
+                "活动",
+                "办公"
+              ],
+              "facts": [
+                "产品支持字幕编辑",
+                "用户可以修改导出的脚本文本"
+              ]
+            },
+            {
+              "id": "M02",
+              "tags": [
+                "课程",
+                "学习",
+                "活动",
+                "校园"
+              ],
+              "facts": [
+                "活动提供一次公开课程",
+                "报名表可以收集参加者的时间偏好"
+              ]
+            }
+          ],
+          "variants": {
+            "premium": {
+              "label": "完整内容方案",
+              "generation_fee": 12,
+              "generation_minutes": 8,
+              "deliverable": "完整脚本与互动环节"
+            },
+            "basic": {
+              "label": "精简内容方案",
+              "generation_fee": 8,
+              "generation_minutes": 3,
+              "deliverable": "核心脚本与行动提示"
+            }
+          },
+          "tool_rules": {
+            "search_materials": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "estimate_plan": {
+              "fee": 0,
+              "minutes": 1
+            },
+            "generate_script": {
+              "fee": "variant.generation_fee",
+              "minutes": "variant.generation_minutes"
+            },
+            "save_plan": {
+              "fee": 0,
+              "minutes": 1
+            }
+          },
+          "catalog_version": "2026-10-29-v1"
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "search_materials"
+      },
+      "spent_after": 0,
+      "elapsed_after": 1,
+      "next_action": "update_plan"
+    },
+    {
+      "step": 2,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "update_plan",
+      "parameters": {
+        "reason": "我先检查完整方案的可行性。",
+        "variant": "premium",
+        "material_ids": [
+          "M01"
+        ]
+      },
+      "reason": "我先检查完整方案的可行性。",
+      "plan_version": null,
+      "model_call": 2,
+      "tool_calls": 1,
+      "observation": {
+        "status": "succeeded",
+        "plan": {
+          "version": 1,
+          "variant": "premium",
+          "material_ids": [
+            "M01"
+          ],
+          "objective": "字幕产品活动",
+          "steps": [
+            {
+              "id": "search",
+              "tool": "search_materials",
+              "depends_on": [],
+              "status": "succeeded"
+            },
+            {
+              "id": "estimate_before",
+              "tool": "estimate_plan",
+              "depends_on": [
+                "search"
+              ],
+              "status": "succeeded"
+            },
+            {
+              "id": "script",
+              "tool": "generate_script",
+              "depends_on": [
+                "estimate_before"
+              ],
+              "status": "pending"
+            },
+            {
+              "id": "estimate_after",
+              "tool": "estimate_plan",
+              "depends_on": [
+                "script"
+              ],
+              "status": "pending"
+            },
+            {
+              "id": "save",
+              "tool": "save_plan",
+              "depends_on": [
+                "estimate_after"
+              ],
+              "status": "pending"
+            }
+          ]
+        }
+      },
+      "next_action": "estimate_plan"
+    },
+    {
+      "step": 3,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "estimate_plan",
+      "parameters": {
+        "reason": "我核对当前方案费用和剩余时间。"
+      },
+      "reason": "我核对当前方案费用和剩余时间。",
+      "plan_version": 1,
+      "model_call": 3,
+      "tool_calls": 2,
+      "observation": {
+        "status": "succeeded",
+        "data": {
+          "plan_version": 1,
+          "script_key": "274af7eb77ecea57b9cb96f803d2272c647a51da1def97c6589a54d475f8c9f9",
+          "script_exists": false,
+          "spent": 0,
+          "remaining_fee": 12,
+          "total_fee": 12,
+          "budget": 20,
+          "budget_gap": 0,
+          "remaining_minutes": 10,
+          "estimated_finish": "2026-10-29T17:12:00+08:00",
+          "time_gap_minutes": 10.0,
+          "feasible": false
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "estimate_plan"
+      },
+      "spent_after": 0,
+      "elapsed_after": 2,
+      "next_action": "update_plan"
+    },
+    {
+      "step": 4,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "update_plan",
+      "parameters": {
+        "reason": "估算超出约束，我改用精简方案再检查。",
+        "variant": "basic",
+        "material_ids": [
+          "M01"
+        ]
+      },
+      "reason": "估算超出约束，我改用精简方案再检查。",
+      "plan_version": 1,
+      "model_call": 4,
+      "tool_calls": 2,
+      "observation": {
+        "status": "succeeded",
+        "plan": {
+          "version": 2,
+          "variant": "basic",
+          "material_ids": [
+            "M01"
+          ],
+          "objective": "字幕产品活动",
+          "steps": [
+            {
+              "id": "search",
+              "tool": "search_materials",
+              "depends_on": [],
+              "status": "succeeded"
+            },
+            {
+              "id": "estimate_before",
+              "tool": "estimate_plan",
+              "depends_on": [
+                "search"
+              ],
+              "status": "succeeded"
+            },
+            {
+              "id": "script",
+              "tool": "generate_script",
+              "depends_on": [
+                "estimate_before"
+              ],
+              "status": "pending"
+            },
+            {
+              "id": "estimate_after",
+              "tool": "estimate_plan",
+              "depends_on": [
+                "script"
+              ],
+              "status": "pending"
+            },
+            {
+              "id": "save",
+              "tool": "save_plan",
+              "depends_on": [
+                "estimate_after"
+              ],
+              "status": "pending"
+            }
+          ]
+        }
+      },
+      "next_action": "estimate_plan"
+    },
+    {
+      "step": 5,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "estimate_plan",
+      "parameters": {
+        "reason": "我核对当前方案费用和剩余时间。"
+      },
+      "reason": "我核对当前方案费用和剩余时间。",
+      "plan_version": 2,
+      "model_call": 5,
+      "tool_calls": 3,
+      "observation": {
+        "status": "succeeded",
+        "data": {
+          "plan_version": 2,
+          "script_key": "abe32109fb4a722a913e207aaf7bf09b1e1cfc663799875a0b2102207c3c3b72",
+          "script_exists": false,
+          "spent": 0,
+          "remaining_fee": 8,
+          "total_fee": 8,
+          "budget": 20,
+          "budget_gap": 0,
+          "remaining_minutes": 5,
+          "estimated_finish": "2026-10-29T17:08:00+08:00",
+          "time_gap_minutes": 6.0,
+          "feasible": false
+        },
+        "charged": 0,
+        "elapsed_minutes": 1,
+        "tool": "estimate_plan"
+      },
+      "spent_after": 0,
+      "elapsed_after": 3,
+      "next_action": "finish_task"
+    },
+    {
+      "step": 6,
+      "kind": "decision",
+      "model_mode": "mock",
+      "response_model": "offline-flow-simulator-v1",
+      "action": "finish_task",
+      "parameters": {
+        "reason": "可用方案仍不可行；预算缺口 0，时间缺口 6.0 分钟。",
+        "status": "incomplete"
+      },
+      "reason": "可用方案仍不可行；预算缺口 0，时间缺口 6.0 分钟。",
+      "plan_version": 2,
+      "model_call": 6,
+      "tool_calls": 3
+    },
+    {
+      "step": 7,
+      "kind": "terminal",
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "reason": "可用方案仍不可行；预算缺口 0，时间缺口 6.0 分钟。"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "request_id": "mock-E03-missing-deadline",
+  "run_id": "1f751fab-1e3d-48a3-aafc-95eee93f76d4",
+  "status": "waiting_input",
+  "reason_code": "MISSING_FIELDS",
+  "reason": "请补充：deadline",
+  "replayed": false,
+  "model_mode": "mock",
+  "model_name": "offline-flow-simulator-v1",
+  "catalog_version": "2026-10-29-v1",
+  "request": {
+    "request_id": "mock-E03-missing-deadline",
+    "theme": "字幕产品活动",
+    "budget": 20,
+    "deadline": null
+  },
+  "plan": null,
+  "plan_history": [],
+  "steps": [],
+  "materials": {},
+  "script": null,
+  "saved": null,
+  "cost": {
+    "spent": 0,
+    "events": [],
+    "estimate": null,
+    "api_usage": [],
+    "api_fee": null
+  },
+  "time": {
+    "start_at": "2026-10-29T17:00:00+08:00",
+    "simulated_minutes": 0,
+    "wall_seconds": 0.0119
+  },
+  "calls": {
+    "model": 0,
+    "tools": 0
+  },
+  "missing_fields": [
+    "deadline"
+  ],
+  "trace": [
+    {
+      "step": 1,
+      "kind": "terminal",
+      "status": "waiting_input",
+      "reason_code": "MISSING_FIELDS",
+      "reason": "请补充：deadline"
+    }
+  ]
+}

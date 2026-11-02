@@ -1,0 +1,85 @@
+{
+  "cost_events": [
+    {
+      "amount": 12,
+      "plan_version": 1,
+      "script_key": "274af7eb77ecea57b9cb96f803d2272c647a51da1def97c6589a54d475f8c9f9",
+      "tool": "generate_script"
+    }
+  ],
+  "plan": {
+    "material_ids": [
+      "M01"
+    ],
+    "objective": "字幕产品活动",
+    "steps": [
+      {
+        "depends_on": [],
+        "id": "search",
+        "status": "succeeded",
+        "tool": "search_materials"
+      },
+      {
+        "depends_on": [
+          "search"
+        ],
+        "id": "estimate_before",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_before"
+        ],
+        "id": "script",
+        "status": "succeeded",
+        "tool": "generate_script"
+      },
+      {
+        "depends_on": [
+          "script"
+        ],
+        "id": "estimate_after",
+        "status": "succeeded",
+        "tool": "estimate_plan"
+      },
+      {
+        "depends_on": [
+          "estimate_after"
+        ],
+        "id": "save",
+        "status": "succeeded",
+        "tool": "save_plan"
+      }
+    ],
+    "variant": "premium",
+    "version": 1
+  },
+  "plan_id": "plan_f84e2a0ba304414f",
+  "request_id": "mock-E01-normal",
+  "script": {
+    "deliverable": "完整脚本与互动环节",
+    "generation_mode": "local_mock",
+    "sections": [
+      {
+        "text": "本次活动围绕字幕产品活动展开。",
+        "title": "主题"
+      },
+      {
+        "text": "产品支持字幕编辑；用户可以修改导出的脚本文本",
+        "title": "素材事实"
+      },
+      {
+        "text": "参与者可以了解素材信息，并选择后续关注内容。",
+        "title": "行动提示"
+      }
+    ],
+    "source_ids": [
+      "M01"
+    ],
+    "theme": "字幕产品活动",
+    "variant": "premium"
+  },
+  "simulated_finish": "2026-10-29T17:12:00+08:00",
+  "total_spent": 12
+}

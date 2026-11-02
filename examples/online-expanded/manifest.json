@@ -1,0 +1,330 @@
+{
+  "mode": "online",
+  "recorded_at": "2026-11-02T02:18:56.134693+00:00",
+  "model": "deepseek-v4.1-flash-1017",
+  "python": "3.12.13 (main, May 10 2026, 19:35:37) [MSC v.1944 64 bit (AMD64)]",
+  "catalog_version": "2026-10-29-v1",
+  "versions": {
+    "langgraph": "1.2.18",
+    "openai": "2.54.0",
+    "pydantic": "2.14.1"
+  },
+  "repeat": 2,
+  "cases": [
+    {
+      "case": "E06-no-feasible-plan-r01",
+      "scenario": "E06-no-feasible-plan",
+      "repetition": 1,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 5,
+      "tool_calls": 3,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E06-no-feasible-plan-r02",
+      "scenario": "E06-no-feasible-plan",
+      "repetition": 2,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E07-duplicate-r01",
+      "scenario": "E07-duplicate",
+      "repetition": 1,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E07-duplicate-r02",
+      "scenario": "E07-duplicate",
+      "repetition": 2,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E08-save-failure-r01",
+      "scenario": "E08-save-failure",
+      "repetition": 1,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 8,
+      "tool_calls": 6,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E08-save-failure-r02",
+      "scenario": "E08-save-failure",
+      "repetition": 2,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 8,
+      "tool_calls": 6,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E09-step-limit-r01",
+      "scenario": "E09-step-limit",
+      "repetition": 1,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E09-step-limit-r02",
+      "scenario": "E09-step-limit",
+      "repetition": 2,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 1,
+      "tool_calls": 0,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E10-deadline-r01",
+      "scenario": "E10-deadline",
+      "repetition": 1,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 3,
+      "tool_calls": 1,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E10-deadline-r02",
+      "scenario": "E10-deadline",
+      "repetition": 2,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 4,
+      "tool_calls": 2,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E11-changed-prices-r01",
+      "scenario": "E11-changed-prices",
+      "repetition": 1,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "spent": 6,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E11-changed-prices-r02",
+      "scenario": "E11-changed-prices",
+      "repetition": 2,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 7,
+      "tool_calls": 5,
+      "spent": 6,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E12-time-replan-r01",
+      "scenario": "E12-time-replan",
+      "repetition": 1,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 10,
+      "tool_calls": 6,
+      "spent": 8,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E12-time-replan-r02",
+      "scenario": "E12-time-replan",
+      "repetition": 2,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 9,
+      "tool_calls": 6,
+      "spent": 8,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E13-repeated-generation-failure-r01",
+      "scenario": "E13-repeated-generation-failure",
+      "repetition": 1,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 8,
+      "tool_calls": 5,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E13-repeated-generation-failure-r02",
+      "scenario": "E13-repeated-generation-failure",
+      "repetition": 2,
+      "status": "completed",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 13,
+      "tool_calls": 10,
+      "spent": 8,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E14-persistent-save-failure-r01",
+      "scenario": "E14-persistent-save-failure",
+      "repetition": 1,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 10,
+      "tool_calls": 8,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E14-persistent-save-failure-r02",
+      "scenario": "E14-persistent-save-failure",
+      "repetition": 2,
+      "status": "incomplete",
+      "reason_code": "MODEL_FINISH",
+      "model_calls": 11,
+      "tool_calls": 9,
+      "spent": 12,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E15-empty-materials-r01",
+      "scenario": "E15-empty-materials",
+      "repetition": 1,
+      "status": "waiting_input",
+      "reason_code": "NEEDS_INFORMATION",
+      "model_calls": 5,
+      "tool_calls": 4,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    },
+    {
+      "case": "E15-empty-materials-r02",
+      "scenario": "E15-empty-materials",
+      "repetition": 2,
+      "status": "waiting_input",
+      "reason_code": "NEEDS_INFORMATION",
+      "model_calls": 5,
+      "tool_calls": 4,
+      "spent": 0,
+      "evaluation": {
+        "passed": true,
+        "errors": []
+      }
+    }
+  ],
+  "commit": "6df4289af9c1df7da0693d7167f5b3f85a98ca2f",
+  "source_sha256": {
+    "pyproject.toml": "d68ee2a564b42506eba75dbb0ddf6f3a9440ed5c834560c93368542e0d0d3bdf",
+    "uv.lock": "aeec8ef52be794ad0c9331e835f5daa7adbb6fbaed4fccd7bfb1c7b4d5e7ec6b",
+    "scripts/audit_project.py": "5b1e4c48c4f87dfaca82ebaf03f7c2f22133a70ae1295edaa018403761fa593c",
+    "scripts/check_evidence.py": "87469bd89833794dd685a70bd3c0094ea7132d0da514b58d639342e7ba125bc6",
+    "scripts/run_examples.py": "4fb0bd92a7b2697e16d1609111f76e261f34c2a5f8f514d762bc3a74710bdd14",
+    "src/content_agent/__init__.py": "01f95dfe969ac282f51627c4735bae820bdc3e2014bd188902e6e97ae8b7ae49",
+    "src/content_agent/catalog.py": "999d284ff0b0dae691c51582332c66c212deec400682d868e5ab329daac8c1cf",
+    "src/content_agent/cli.py": "d141cdc905e53ac010c26a3d1ab53b59ca0a3295d955abd2a417339bc69ea7b6",
+    "src/content_agent/engine.py": "a262ed94c36c604a56cfc4a418771a910e7a3eae64cfebe337d2601965ee2d4e",
+    "src/content_agent/evaluation.py": "afd8af3a30c78bb952fa3bfc83ba018eb807541830604f12afbd4d89bb08ff55",
+    "src/content_agent/models.py": "7ea68d06fed7f6c2a078eed980e8e797fa046da01f1bd2e3ba4313d60ff6cab8",
+    "src/content_agent/schemas.py": "9526529dd7c06f24837bf619b8cdb168a845da93b065a0f4f4ea45649deac74d",
+    "src/content_agent/storage.py": "0cdeeeca8898292fa46624f2773ecd7690a3b4fd8c0d99036eae2aa2b3669432",
+    "src/content_agent/tools.py": "cceec0235eb95a7cca4a7875cb4154def5d39e56151d3d40a4d44277c0dd5dd1",
+    "src/content_agent/web.py": "d2bf118e5ce144325bef338048a26f7fc107985511630f125c44c49279164316",
+    "tests/conftest.py": "c6a44bbdba530e2a9ca8ef203bf8a28ea3048168ddb49da5619b40346cf8aa6f",
+    "tests/test_agent.py": "011bc82353cb0b05c297b8e5591899e19dd8d58556548056afb6276b7e62687f",
+    "tests/test_catalog.py": "a3ea53ed361f5970899cae9bd96b2aa34667a828bfa4d2bef3ee5953eec12333",
+    "tests/test_evaluation.py": "63b51ac445caecd8d5b3a7b1e94151650833b5faba74190219de265c75a33b68",
+    "tests/test_models.py": "6c8b9eea49f65a034959f06fab2d72bd3ca17e2134948a0c9e3283d9a603ab3e",
+    "tests/test_web.py": "f493c5002610410034bced025e1ef3ad394d2879eb881c91af7af417f693bfa5",
+    "tests/web_request.test.cjs": "4c391e7bcb3a8bfdce5abbbf4079ad80ad15d85fc2109db27230e375d149999b",
+    "data/catalog.json": "d175927c067c0eaa08b8a5f7f55cb8deda675db2d26a52b6545f5b85e66acad6",
+    "data/requests/missing-budget.json": "05d1a9b3edc359cfca84dfe5f4252fc105b5b977897f9915bd107dba78a1ce80",
+    "data/requests/normal.json": "ec152c9f1e723c676803930daca3f4e5f7f23194844df0e9ee9efe6ab48bcab0",
+    "data/requests/replan.json": "ef6f0564306d6f8ed8e0b7223aa4f3841f731ce4afdef96c6326456766c980ca",
+    "data/scenarios/fixed-clock.json": "d83e7ba8ab486177c5b6e136901f3e06c2a5e0a46b234f04163fe33d719fd2b1",
+    "data/scenarios/generation-failure.json": "66ec2cb372510fe7f97fd8c8cb430ef701612672cb36045183e41ff0581d7060",
+    "web/app.js": "1d0094d4a7618c64b82bf5d23cca48fbe9a3d1fa2211786d36e16b8b012e6e45",
+    "web/index.html": "bd9953ba189b424bb5210071310806b8da2868cb8d1fbd2a5e7a763fbcdf67a5",
+    "web/style.css": "4713b634cf00ca5bc0559c2c0501b9b40987730691f6726bb3c2d2fb460ca576"
+  },
+  "passed": true
+}

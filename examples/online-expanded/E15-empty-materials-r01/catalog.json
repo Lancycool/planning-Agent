@@ -1,0 +1,44 @@
+{
+  "version": "2026-10-29-v1-empty-materials",
+  "materials": [],
+  "variants": {
+    "premium": {
+      "label": "完整内容方案",
+      "generation_fee": 12,
+      "generation_minutes": 8,
+      "deliverable": "完整脚本与互动环节"
+    },
+    "basic": {
+      "label": "精简内容方案",
+      "generation_fee": 8,
+      "generation_minutes": 3,
+      "deliverable": "核心脚本与行动提示"
+    }
+  },
+  "tools": {
+    "search_materials": {
+      "fee": 0,
+      "minutes": 1
+    },
+    "estimate_plan": {
+      "fee": 0,
+      "minutes": 1
+    },
+    "generate_script": {
+      "fee": "variant.generation_fee",
+      "minutes": "variant.generation_minutes"
+    },
+    "save_plan": {
+      "fee": 0,
+      "minutes": 1
+    }
+  },
+  "billing": {
+    "unit": "模拟单位（整数）",
+    "charge_on": "generate_script 成功返回时",
+    "failed_call_fee": 0,
+    "failed_call_time": "与成功调用相同",
+    "estimate_is_spend": false,
+    "no_real_payment_or_publication": true
+  }
+}
