@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>有案 · 内容任务工作台</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<aside class="rail"><a class="brand" href="/" aria-label="有案首页">案<span>●</span></a><span class="rail-label">内容工作室</span><span class="rail-bottom">本地版<br>01</span></aside>
+<main>
+<header><div class="wordmark">有案 <span>Content studio</span></div><span class="local"><i></i> 本机工作台</span></header>
+<section class="intro"><div><p class="kicker">你定方向，Agent 推进每一步。</p><h1>好想法，<br>也要有个<span class="underline">可行方案。</span></h1></div><div class="intro-note"><span class="spark">✳</span><p>预算有上限，思路没有。<br>让每一次调整都有依据。</p><span class="seed-label">设计种子 / 3f9a7c2e</span></div></section>
+<div class="workspace">
+<section class="brief"><div class="section-title"><h2>这次，做什么？</h2><span class="small">任务简报</span></div>
+<form id="brief"><label for="theme">活动主题</label><textarea id="theme" required maxlength="500">字幕产品活动，请先评估完整方案；若预算超限，再考虑精简方案</textarea>
+<div class="field-pair"><div><label for="budget">业务预算 <small>模拟单位</small></label><input id="budget" type="number" min="0" step="1" value="10" required></div><div><label for="deadline">完成时间</label><input id="deadline" type="datetime-local" required></div></div>
+<label for="mode">运行方式</label><select id="mode"><option value="mock">离线演示 · 不调用模型 API</option><option value="online">真实模型 · 使用百炼 API 额度</option></select>
+<p class="form-hint">素材与制作工具采用本地模拟数据。真实模式的密钥由本机 .env 提供。</p><button id="run" class="primary" type="submit">开始规划 <span>↗</span></button><button id="new-task" type="button">新建任务</button><p class="form-hint">相同输入再次提交会返回原结果。你可以点击“新建任务”重新执行。</p></form>
+<div class="examples"><span>或看看真实运行记录</span><div><button data-example="normal">正常完成</button><button class="selected" data-example="replan">预算重规划</button><button data-example="failure">工具失败</button></div></div>
+</section>
+<section class="board"><div class="section-title"><h2>让计划走得通。</h2><span id="mode-badge" class="badge">正在读取案例</span></div>
+<div class="board-top"><div><p class="small">当前方案</p><h3 id="plan-name">等待开始</h3><p id="plan-sub" class="small">模型会根据工具结果调整下一步。</p></div><div class="stamp" id="status">待运行</div></div>
+<div id="steps" class="steps"></div>
+<div class="budget-strip"><div><span>实际支出</span><strong id="spent">—</strong></div><div class="budget-track"><div id="budget-fill"></div></div><div><span>预算上限</span><strong id="limit">—</strong></div></div>
+<div class="board-detail"><div><span class="small">模拟任务耗时</span><strong id="minutes">—</strong></div><div><span class="small">模型 / 工具调用</span><strong id="calls">—</strong></div><div><span class="small">方案版本</span><strong id="version">—</strong></div></div>
+<p id="notice" role="status" aria-live="polite">页面先展示一份已完成的真实模型记录。</p>
+<div class="trace-head"><h3>每一步，都有来由</h3><span class="small">实际动作记录</span></div><div id="trace" class="trace"></div>
+</section>
+<section class="output"><div class="section-title"><h2>方案阅览</h2><button id="download" disabled title="下载完整运行结果">下载 JSON ↓</button></div><div class="paper"><div class="paper-meta"><span>内容活动方案</span><span id="source">—</span></div><h3 id="output-title">等待一份新方案</h3><div id="script"></div><div class="receipt" id="receipt">方案将在保存成功后显示凭据。</div></div><p class="output-note">你的最终方案、费用和执行记录会一起保留。<br>历史回放不会再次消耗 API 额度。</p></section>
+</div><footer><span>有案 / 把灵感交给行动</span><span>LangGraph 驱动 · 本地业务模拟</span></footer>
+</main><script src="/app.js"></script></body></html>
